@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50">
+  <defs>
+    <style>
+      .logo-text {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 36px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        fill: #1A1A1A;
+      }
+    </style>
+  </defs>
+  <text x="10" y="38" class="logo-text">ZOOPA</text>
+</svg>

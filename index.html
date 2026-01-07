@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoopa - Projecte VIENA | Cas d'èxit en disseny gràfic multiformat</title>
+    <meta name="description" content="Cas d'èxit de Zoopa The Smart Agency: disseny gràfic, animació i producció audiovisual per a la campanya Nous Productes de VIENA 2024-2025.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-chai: #C4A574;
+            --color-chai-dark: #A68B5B;
+            --color-matcha: #9CBD5C;
+            --color-matcha-dark: #7A9A45;
+            --color-toffee: #E89B3C;
+            --color-toffee-dark: #C4822E;
+            --color-cream: #FAF8F5;
+            --color-cream-dark: #F0EBE3;
+            --color-text: #1A1A1A;
+            --color-text-light: #4A4A4A;
+            --color-text-muted: #7A7A7A;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'DM Sans', system-ui, sans-serif;
+            --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-cream);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            opacity: 0.8;
+        }
+
+        .nav-logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--color-toffee);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: white;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Sections Base */
+        section {
+            padding: 6rem 3rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Full Width Image Section */
+        .full-width-image {
+            padding: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .full-width-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Section Headers */
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-toffee);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--color-text);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title--light {
+            color: white;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--color-text-light);
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        .section-description--light {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(26, 26, 26, 0.7) 0%,
+                rgba(26, 26, 26, 0.4) 50%,
+                rgba(26, 26, 26, 0.6) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-agency {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--color-toffee);
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.2s;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3.5rem, 10vw, 8rem);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: white;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.4s;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 500px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.6s;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 1s;
+        }
+
+        .hero-scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        /* Intro Section */
+        .intro {
+            background: var(--color-cream);
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .intro-image {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s var(--transition-smooth);
+        }
+
+        .intro-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .intro-content {
+            padding: 2rem 0;
+        }
+
+        .intro-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-toffee);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            margin-top: 0.5rem;
+        }
+
+        /* Capacitat Section */
+        .capacitat {
+            background: var(--color-text);
+            color: white;
+        }
+
+        .capacitat-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .capacitat-video {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .capacitat-video video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .capacitat-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .capacitat-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .capacitat-list li:last-child {
+            border-bottom: none;
+        }
+
+        .capacitat-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            color: var(--color-toffee);
+        }
+
+        .capacitat-list span {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .btn--primary {
+            background: var(--color-toffee);
+            color: white;
+        }
+
+        .btn--primary:hover {
+            background: var(--color-toffee-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Adaptabilitat Section */
+        .adaptabilitat {
+            background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream-dark) 100%);
+        }
+
+        .adaptabilitat-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .adaptabilitat-header .section-description {
+            margin: 0 auto;
+        }
+
+        /* Format Categories */
+        .format-categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .format-category h4 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--color-toffee);
+        }
+
+        .format-category ul {
+            list-style: none;
+        }
+
+        .format-category li {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            padding: 0.5rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .format-category li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--color-matcha);
+        }
+
+        .format-category:nth-child(2) li::before {
+            background: var(--color-toffee);
+        }
+
+        .format-category:nth-child(3) li::before {
+            background: var(--color-chai);
+        }
+
+        .format-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .format-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s var(--transition-smooth);
+        }
+
+        .format-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .format-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s var(--transition-smooth);
+        }
+
+        .format-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .format-info {
+            padding: 1.5rem;
+        }
+
+        .format-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-matcha);
+        }
+
+        .format-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-top: 0.5rem;
+        }
+
+        /* Qualitat Gràfica Section */
+        .qualitat-grafica {
+            background: white;
+        }
+
+        .qualitat-grafica-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .qualitat-content {
+            position: sticky;
+            top: 120px;
+        }
+
+        .qualitat-points {
+            margin-top: 2rem;
+        }
+
+        .qualitat-point {
+            display: flex;
+            gap: 1rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .qualitat-point:last-child {
+            border-bottom: none;
+        }
+
+        .qualitat-point-number {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-chai);
+            line-height: 1;
+        }
+
+        .qualitat-point-text h4 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 0.25rem;
+        }
+
+        .qualitat-point-text p {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .product-card:first-child {
+            grid-column: span 2;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s var(--transition-smooth);
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Qualitat Lingüística Section */
+        .qualitat-linguistica {
+            background: var(--color-matcha);
+            color: white;
+        }
+
+        .ql-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .ql-content .section-label {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .ql-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .ql-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .ql-feature-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .ql-feature-icon svg {
+            width: 16px;
+            height: 16px;
+            color: white;
+        }
+
+        .ql-feature-text h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .ql-feature-text p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .ql-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .ql-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(100%);
+            transition: filter 0.6s ease;
+        }
+
+        .ql-image:hover img {
+            filter: grayscale(0%);
+        }
+
+        /* Validació Section */
+        .validacio {
+            background: var(--color-cream-dark);
+        }
+
+        .validacio-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .validacio-header .section-description {
+            margin: 0 auto;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-chai), var(--color-matcha), var(--color-toffee));
+            z-index: 0;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-toffee);
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover .process-number {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .process-step h4 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .process-step p {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
+        /* Portafolis Section */
+        .portafolis {
+            background: var(--color-text);
+            color: white;
+        }
+
+        .portafolis-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .portafolis-header .section-label {
+            color: var(--color-toffee);
+        }
+
+        .portafolis-header .section-description {
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .video-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.4s var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .video-card:first-child {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .video-card video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Video Thumbnail with Play Button */
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-thumbnail .play-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .video-thumbnail:hover .play-overlay {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .play-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-thumbnail:hover .play-icon {
+            transform: scale(1.1);
+            background: white;
+        }
+
+        .play-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--color-text);
+            margin-left: 4px;
+        }
+
+        .video-card.playing .video-thumbnail {
+            display: none;
+        }
+
+        .video-card video {
+            display: none;
+        }
+
+        .video-card.playing video {
+            display: block;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0D0D0D;
+            color: white;
+            padding: 4rem 3rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .footer-tagline {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.05em;
+        }
+
+        .footer-info {
+            text-align: right;
+        }
+
+        .footer-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--color-toffee);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-location {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 0.5rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scaleY(0.8);
+            }
+        }
+
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s var(--transition-smooth);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-delay-1 { transition-delay: 0.1s; }
+        .animate-delay-2 { transition-delay: 0.2s; }
+        .animate-delay-3 { transition-delay: 0.3s; }
+        .animate-delay-4 { transition-delay: 0.4s; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            section {
+                padding: 4rem 2rem;
+            }
+
+            .nav {
+                padding: 1rem 2rem;
+            }
+
+            .intro-grid,
+            .capacitat-grid,
+            .qualitat-grafica-grid,
+            .ql-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .format-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .format-categories {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .video-card:first-child {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+
+            .qualitat-content {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: clamp(2.5rem, 12vw, 4rem);
+            }
+
+            .format-grid,
+            .products-grid,
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card:first-child,
+            .video-card:first-child {
+                grid-column: span 1;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-info {
+                text-align: center;
+            }
+
+            .play-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .play-icon svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="#" class="nav-logo">
+            <img src="assets/logos/logo-zoopa-white.webp" alt="Zoopa">
+        </a>
+        <ul class="nav-menu">
+            <li><a href="#projecte">Projecte</a></li>
+            <li><a href="#capacitats">Capacitats</a></li>
+            <li><a href="#qualitat">Qualitat</a></li>
+            <li><a href="#portafolis">Portafolis</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <img src="assets/images/portada.webp" alt="VIENA Nous Productes">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-agency">Zoopa The Smart Agency</p>
+            <h1 class="hero-title">Projecte VIENA</h1>
+            <p class="hero-subtitle">Cas d'èxit en disseny gràfic, animació i producció audiovisual multiformat</p>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="hero-scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Full Width Image 1 -->
+    <section class="full-width-image animate-on-scroll">
+        <img src="assets/images/viena_part1.jpg" alt="VIENA - Campanya visual">
+    </section>
+
+    <!-- Introducció Section -->
+    <section class="intro" id="projecte">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-image animate-on-scroll">
+                    <img src="assets/images/logos-tazas.webp" alt="VIENA Nous Productes - Logos i Tasses">
+                </div>
+                <div class="intro-content">
+                    <span class="section-label animate-on-scroll">Introducció</span>
+                    <h2 class="section-title animate-on-scroll animate-delay-1">VIENA 2024-2025</h2>
+                    <p class="section-description animate-on-scroll animate-delay-2">
+                        Desenvolupament integral de la campanya de llançament dels nous productes de VIENA: Hi-Chai, Matxa-Xa i Toffee Coffee. El projecte inclou disseny gràfic, creació d'identitat visual per a cada producte, animació gràfica i producció audiovisual per a múltiples canals i formats.
+                    </p>
+                    <div class="intro-stats animate-on-scroll animate-delay-3">
+                        <div class="stat">
+                            <div class="stat-number">18</div>
+                            <div class="stat-label">Productes</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">42</div>
+                            <div class="stat-label">Vídeos</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">+90</div>
+                            <div class="stat-label">Formats</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capacitat Tècnica Section -->
+    <section class="capacitat" id="capacitats">
+        <div class="container">
+            <div class="capacitat-grid">
+                <div class="capacitat-video animate-on-scroll">
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/videos/display-mati.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="capacitat-content">
+                    <span class="section-label animate-on-scroll" style="color: var(--color-toffee);">Capacitat tècnica</span>
+                    <h2 class="section-title section-title--light animate-on-scroll animate-delay-1">Integració total de serveis</h2>
+                    <p class="section-description section-description--light animate-on-scroll animate-delay-2">
+                        Disposem d'una elevada capacitat tècnica per desenvolupar peces en formats digitals, impresos i audiovisuals. El nostre marc de treball integra totes les disciplines necessàries.
+                    </p>
+                    <ul class="capacitat-list animate-on-scroll animate-delay-3">
+                        <li>
+                            <svg class="capacitat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                            <span>Disseny gràfic i direcció d'art</span>
+                        </li>
+                        <li>
+                            <svg class="capacitat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/>
+                                <line x1="7" y1="2" x2="7" y2="22"/>
+                                <line x1="17" y1="2" x2="17" y2="22"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <line x1="2" y1="7" x2="7" y2="7"/>
+                                <line x1="2" y1="17" x2="7" y2="17"/>
+                                <line x1="17" y1="17" x2="22" y2="17"/>
+                                <line x1="17" y1="7" x2="22" y2="7"/>
+                            </svg>
+                            <span>Animació gràfica amb After Effects</span>
+                        </li>
+                        <li>
+                            <svg class="capacitat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="23 7 16 12 23 17 23 7"/>
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                            </svg>
+                            <span>Producció i edició audiovisual</span>
+                        </li>
+                        <li>
+                            <svg class="capacitat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                            <span>Adaptació multicanal i multiplataforma</span>
+                        </li>
+                    </ul>
+                    <a href="https://www.zoopa.cat" target="_blank" rel="noopener" class="btn btn--primary animate-on-scroll animate-delay-4">
+                        Visita zoopa.cat
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Width Image 2 -->
+    <section class="full-width-image animate-on-scroll">
+        <img src="assets/images/viena_part2.jpg" alt="VIENA - Productes">
+    </section>
+
+    <!-- Adaptabilitat Section -->
+    <section class="adaptabilitat">
+        <div class="container">
+            <div class="adaptabilitat-header">
+                <span class="section-label animate-on-scroll">Adaptabilitat</span>
+                <h2 class="section-title animate-on-scroll animate-delay-1">Multiformat des de l'origen</h2>
+                <p class="section-description animate-on-scroll animate-delay-2">
+                    Les creativitats es conceben des de l'origen amb criteris multiformat, facilitant la seva adaptació a diferents canals i plataformes sense pèrdua de qualitat ni coherència. Aquest enfocament permet optimitzar cada peça segons dimensions, durades i contextos d'ús, tant en formats estàtics com animats o audiovisuals.
+                </p>
+            </div>
+            
+            <!-- Format Categories -->
+            <div class="format-categories animate-on-scroll animate-delay-3">
+                <div class="format-category">
+                    <h4>Formats impresos</h4>
+                    <ul>
+                        <li>Cartells i pòsters (A3, A2, A1, B1)</li>
+                        <li>Fullets i díptics</li>
+                        <li>Catàlegs i publicacions</li>
+                        <li>Papereria corporativa</li>
+                        <li>Senyalètica i vinils</li>
+                        <li>Roll-ups i photocalls</li>
+                    </ul>
+                </div>
+                <div class="format-category">
+                    <h4>Formats digitals estàtics</h4>
+                    <ul>
+                        <li>Banners web (formats IAB)</li>
+                        <li>Gràfiques per a xarxes socials</li>
+                        <li>Newsletters i emailings</li>
+                        <li>Presentacions digitals</li>
+                        <li>Infografies interactives</li>
+                        <li>E-books i PDF accessibles</li>
+                    </ul>
+                </div>
+                <div class="format-category">
+                    <h4>Formats animats i audiovisuals</h4>
+                    <ul>
+                        <li>Animacions motion graphics</li>
+                        <li>Vídeos promocionals</li>
+                        <li>Stories i Reels (9:16)</li>
+                        <li>Spots per a pantalles digitals</li>
+                        <li>GIFs animats</li>
+                        <li>Subtitulació i localització</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="format-grid">
+                <div class="format-card animate-on-scroll">
+                    <img src="assets/images/carousel-matxa-xa.webp" alt="Matxa-Xa - Format Carousel Instagram">
+                    <div class="format-info">
+                        <span class="format-label">Instagram</span>
+                        <h3 class="format-title">Carousel Feed</h3>
+                    </div>
+                </div>
+                <div class="format-card animate-on-scroll animate-delay-1">
+                    <img src="assets/images/carousel-toffee-coffee.webp" alt="Toffee Coffee - Format Stories">
+                    <div class="format-info">
+                        <span class="format-label">Social Media</span>
+                        <h3 class="format-title">Stories i Reels</h3>
+                    </div>
+                </div>
+                <div class="format-card animate-on-scroll animate-delay-2">
+                    <img src="assets/images/captura-pantalla.webp" alt="Captura de pantalla - Format Web">
+                    <div class="format-info">
+                        <span class="format-label">Digital</span>
+                        <h3 class="format-title">Web i Display</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualitat Gràfica Section -->
+    <section class="qualitat-grafica" id="qualitat">
+        <div class="container">
+            <div class="qualitat-grafica-grid">
+                <div class="qualitat-content">
+                    <span class="section-label animate-on-scroll">Qualitat gràfica</span>
+                    <h2 class="section-title animate-on-scroll animate-delay-1">Excel·lència visual</h2>
+                    <p class="section-description animate-on-scroll animate-delay-2">
+                        La qualitat gràfica és un element central del nostre treball. Apliquem criteris orientats a la claredat comunicativa i la coherència visual.
+                    </p>
+                    <div class="qualitat-points">
+                        <div class="qualitat-point animate-on-scroll animate-delay-3">
+                            <span class="qualitat-point-number">01</span>
+                            <div class="qualitat-point-text">
+                                <h4>Claredat comunicativa</h4>
+                                <p>Missatges visuals directes i efectius</p>
+                            </div>
+                        </div>
+                        <div class="qualitat-point animate-on-scroll animate-delay-4">
+                            <span class="qualitat-point-number">02</span>
+                            <div class="qualitat-point-text">
+                                <h4>Coherència visual</h4>
+                                <p>Sistema de disseny consistent i reconeixible</p>
+                            </div>
+                        </div>
+                        <div class="qualitat-point animate-on-scroll">
+                            <span class="qualitat-point-number">03</span>
+                            <div class="qualitat-point-text">
+                                <h4>Identitat de marca</h4>
+                                <p>Alineació total amb els valors de VIENA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card animate-on-scroll">
+                        <img src="assets/images/hi-chai-model.webp" alt="Hi-Chai - Model">
+                    </div>
+                    <div class="product-card animate-on-scroll animate-delay-1">
+                        <img src="assets/images/matxa-xa-model.webp" alt="Matxa-Xa - Model">
+                    </div>
+                    <div class="product-card animate-on-scroll animate-delay-2">
+                        <img src="assets/images/toffee-coffee-model.webp" alt="Toffee Coffee - Model">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Width Image 3 -->
+    <section class="full-width-image animate-on-scroll">
+        <img src="assets/images/viena_part3.jpg" alt="VIENA - Detalls">
+    </section>
+
+    <!-- Qualitat Lingüística Section -->
+    <section class="qualitat-linguistica">
+        <div class="container">
+            <div class="ql-grid">
+                <div class="ql-content">
+                    <span class="section-label animate-on-scroll">Qualitat lingüística</span>
+                    <h2 class="section-title section-title--light animate-on-scroll animate-delay-1">Rigor en cada paraula</h2>
+                    <p class="section-description section-description--light animate-on-scroll animate-delay-2">
+                        La qualitat lingüística forma part estructural del procés de producció. Disposem de professionals lingüistes certificats que intervenen en la revisió i validació final dels continguts.
+                    </p>
+                    <div class="ql-features">
+                        <div class="ql-feature animate-on-scroll animate-delay-3">
+                            <div class="ql-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <div class="ql-feature-text">
+                                <h4>Correcció gramatical i lèxica</h4>
+                                <p>Revisió exhaustiva de tots els textos</p>
+                            </div>
+                        </div>
+                        <div class="ql-feature animate-on-scroll animate-delay-4">
+                            <div class="ql-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <div class="ql-feature-text">
+                                <h4>Coherència estilística</h4>
+                                <p>To i registre adequats al context</p>
+                            </div>
+                        </div>
+                        <div class="ql-feature animate-on-scroll">
+                            <div class="ql-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <div class="ql-feature-text">
+                                <h4>Sincronització audiovisual</h4>
+                                <p>Coherència entre subtítols, textos i veu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ql-image animate-on-scroll">
+                    <img src="assets/images/matxa-xa-model-gs.webp" alt="Matxa-Xa - Versió en escala de grisos">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sistema de Validació Section -->
+    <section class="validacio">
+        <div class="container">
+            <div class="validacio-header">
+                <span class="section-label animate-on-scroll">Sistema de validació</span>
+                <h2 class="section-title animate-on-scroll animate-delay-1">Control de qualitat integral</h2>
+                <p class="section-description animate-on-scroll animate-delay-2">
+                    Apliquem un sistema estructurat de validació que assegura el compliment dels requisits tècnics i lingüístics, i una resposta eficient davant de correccions o ajustos.
+                </p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step animate-on-scroll">
+                    <div class="process-number">1</div>
+                    <h4>Revisió creativa</h4>
+                    <p>Validació interna del concepte i l'execució visual</p>
+                </div>
+                <div class="process-step animate-on-scroll animate-delay-1">
+                    <div class="process-number">2</div>
+                    <h4>Comprovació tècnica</h4>
+                    <p>Verificació de formats, resolucions i especificacions</p>
+                </div>
+                <div class="process-step animate-on-scroll animate-delay-2">
+                    <div class="process-number">3</div>
+                    <h4>Validació lingüística</h4>
+                    <p>Revisió per lingüistes professionals certificats</p>
+                </div>
+                <div class="process-step animate-on-scroll animate-delay-3">
+                    <div class="process-number">4</div>
+                    <h4>Control final</h4>
+                    <p>Aprovació definitiva abans del lliurament</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portafolis Section -->
+    <section class="portafolis" id="portafolis">
+        <div class="container">
+            <div class="portafolis-header">
+                <span class="section-label animate-on-scroll">Portafolis audiovisual</span>
+                <h2 class="section-title section-title--light animate-on-scroll animate-delay-1">Peces en moviment</h2>
+                <p class="section-description animate-on-scroll animate-delay-2">
+                    Selecció de les animacions i peces audiovisuals creades per a la campanya VIENA 2024-2025.
+                </p>
+            </div>
+            <div class="video-grid">
+                <div class="video-card animate-on-scroll" data-video="assets/videos/video-01.mp4">
+                    <div class="video-thumbnail">
+                        <img src="assets/thumbnails/thumb-video-01.jpg" alt="Vídeo 1">
+                        <div class="play-overlay">
+                            <div class="play-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <video controls playsinline preload="none">
+                        <source src="assets/videos/video-01.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-card animate-on-scroll animate-delay-1" data-video="assets/videos/video-02.mp4">
+                    <div class="video-thumbnail">
+                        <img src="assets/thumbnails/thumb-video-02.jpg" alt="Vídeo 2">
+                        <div class="play-overlay">
+                            <div class="play-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <video controls playsinline preload="none">
+                        <source src="assets/videos/video-02.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-card animate-on-scroll animate-delay-2" data-video="assets/videos/video-03.mp4">
+                    <div class="video-thumbnail">
+                        <img src="assets/thumbnails/thumb-video-03.jpg" alt="Vídeo 3">
+                        <div class="play-overlay">
+                            <div class="play-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <video controls playsinline preload="none">
+                        <source src="assets/videos/video-03.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-card animate-on-scroll animate-delay-3" data-video="assets/videos/video-04.mp4">
+                    <div class="video-thumbnail">
+                        <img src="assets/thumbnails/thumb-video-04.jpg" alt="Vídeo 4">
+                        <div class="play-overlay">
+                            <div class="play-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <video controls playsinline preload="none">
+                        <source src="assets/videos/video-04.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-card animate-on-scroll" data-video="assets/videos/video-05.mp4">
+                    <div class="video-thumbnail">
+                        <img src="assets/thumbnails/thumb-video-05.jpg" alt="Vídeo 5">
+                        <div class="play-overlay">
+                            <div class="play-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <video controls playsinline preload="none">
+                        <source src="assets/videos/video-05.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-card animate-on-scroll animate-delay-1" data-video="assets/videos/video-06.mp4">
+                    <div class="video-thumbnail">
+                        <img src="assets/thumbnails/thumb-video-06.jpg" alt="Vídeo 6">
+                        <div class="play-overlay">
+                            <div class="play-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <video controls playsinline preload="none">
+                        <source src="assets/videos/video-06.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="assets/logos/logo-zoopa-white.webp" alt="Zoopa" class="footer-logo">
+                <div class="footer-tagline">The Smart Agency</div>
+            </div>
+            <div class="footer-info">
+                <a href="https://www.zoopa.cat" target="_blank" rel="noopener" class="footer-link">
+                    www.zoopa.cat
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                        <polyline points="15 3 21 3 21 9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
+                    </svg>
+                </a>
+                <div class="footer-location">Barcelona</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Animation Observer
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navigation background on scroll
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 100) {
+                nav.style.background = 'rgba(26, 26, 26, 0.98)';
+            } else {
+                nav.style.background = 'rgba(26, 26, 26, 0.95)';
+            }
+        });
+
+        // Video play functionality
+        document.querySelectorAll('.video-card').forEach(card => {
+            const thumbnail = card.querySelector('.video-thumbnail');
+            const video = card.querySelector('video');
+            
+            if (thumbnail && video) {
+                thumbnail.addEventListener('click', () => {
+                    card.classList.add('playing');
+                    video.play();
+                });
+
+                video.addEventListener('ended', () => {
+                    card.classList.remove('playing');
+                    video.currentTime = 0;
+                });
+
+                video.addEventListener('pause', () => {
+                    if (video.currentTime === 0 || video.ended) {
+                        card.classList.remove('playing');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
